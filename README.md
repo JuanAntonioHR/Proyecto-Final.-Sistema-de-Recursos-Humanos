@@ -1,2 +1,2 @@
 # Proyecto-Final.-Sistema-de-Recursos-Humanos
-Proyecto final para la taller de NodeJS
+Proyecto final para el taller de NodeJS
