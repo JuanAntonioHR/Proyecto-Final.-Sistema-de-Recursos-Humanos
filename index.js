@@ -7,17 +7,19 @@ const app = express();
 const empleado = require("./routes/empleado")
 const admin = require("./routes/admin")
 //Middleware
-const index = require("./middleware/index")
-const auth = require("./middleware/auth")
-const notFound = require("./middleware/notFound")
+const auth = require("./middleware/auth");
+const notFound = require("./middleware/notFound");
+const index = require("./middleware/index");
+const cors = require("./middleware/cors")
 
+app.use(cors);
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", index);
-// app.use("/admin", admin); 
-// app.use(auth);
+app.use("/admin", admin); 
+app.use(auth);
 app.use("/empleado", empleado);
 app.use(notFound);
 
