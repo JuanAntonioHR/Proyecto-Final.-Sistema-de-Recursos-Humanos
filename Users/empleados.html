@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
-    <title>Empleados</title>
+    <title>Tabla de Empleados</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <h1>Empleados Registrados</h1>
+    <div class="container">
+        <h1>Empleados</h1>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="busqueda" placeholder="Buscar empleado">
+            </div>
+        </div>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Número de Teléfono</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="tDatos">
+
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <a href="agregarEmpleado.html" class="btn btn-primary botonAgregar">Agregar Empleado</a>
+        </div>
+    </div>
+
+    <script src="./js/empleados.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-<script src="./js/empleados.js"></script>
 </html>
