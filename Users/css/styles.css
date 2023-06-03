@@ -77,4 +77,27 @@ h1 {
   input[type="submit"]:hover {
     background-color: #45a049;
   }
-  
+
+  .custom-search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.custom-search select {
+    margin-right: 10px;
+    width: 15em;
+}
+
+.custom-search .search-input {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.custom-search .search-input input[type="text"] {
+    width: 100%;
+}
+
+.custom-search button {
+    margin-left: 10px;
+}

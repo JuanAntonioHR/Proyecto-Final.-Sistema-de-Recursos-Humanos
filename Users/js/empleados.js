@@ -9,18 +9,32 @@ function init() {
         Authorization: "bearer " + localStorage.getItem("token"),
       },
     };
-    loadEmpleado();
+    loadEmpleado(0);
+
+    //Busqueda al presionar enter
+    var inputBusqueda = document.getElementById("busqueda");
+    inputBusqueda.addEventListener("keypress", function(event) {
+        if (event.keyCode === 13) {
+            busqueda();
+        }
+    });
+    //
+    
   } else {
     window.location.href = "login.html";
   }
 }
 
-function loadEmpleado() {
+function loadEmpleado(metodo) {
   axios
     .get(url + "/empleado", headers)
     .then(function (res) {
       console.log(res);
-      displayEmpleados(res.data.message);
+      if (metodo == 0) {
+        displayEmpleados(res.data.message);
+      } else {
+        busquedaEmpleado(res.data.message);
+      }
     })
     .catch(function (err) {
       console.log(err);
@@ -29,6 +43,7 @@ function loadEmpleado() {
 
 function displayEmpleados(empleado) {
   var table = document.querySelector("tbody");
+  table.innerHTML = "";
   for (var i = 0; i < empleado.length; i++) {
     table.innerHTML += 
     `<tr>
@@ -60,4 +75,21 @@ function deleteEmpleado(id) {
 
 function editarEmpleado(id) {
   window.location.href = `editarEmpleado.html?id=${id}`;
+}
+
+function busqueda() {
+  loadEmpleado(1);
+}
+
+function busquedaEmpleado(empleado) {
+  var categoria = document.getElementById("categoria").value;
+  var busqueda = document.getElementById("busqueda").value;
+
+  const result = empleado.filter((empleado) => {
+    if (empleado[categoria].toLowerCase().includes(busqueda.toLowerCase())) {
+      return empleado;
+    }
+  })
+
+  displayEmpleados(result)
 }

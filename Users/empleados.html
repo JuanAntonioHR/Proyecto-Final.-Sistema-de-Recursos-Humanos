@@ -13,9 +13,21 @@
     <div class="container">
         <h1>Empleados</h1>
 
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <input type="text" class="form-control" id="busqueda" placeholder="Buscar empleado">
+        <div class="row mb-1">
+            <div class="col-md-12">
+                <div class="custom-search">
+                    <select class="form-control" id="categoria">
+                        <option value="first_name">Nombre</option>
+                        <option value="last_name">Apellido</option>
+                        <option value="phone_number">Número de Teléfono</option>
+                        <option value="email">Email</option>
+                        <option value="address">Dirección</option>
+                    </select>
+                    <div class="search-input">
+                        <input type="text" class="form-control" id="busqueda" placeholder="Buscar...">
+                    </div>
+                    <button class="btn btn-primary" type="button" id="buscarEmpleado" onclick="busqueda()"><i class="fa fa-search"></i></button>
+                </div>
             </div>
         </div>
 
@@ -30,7 +42,7 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="tDatos">
 
             </tbody>
         </table>
