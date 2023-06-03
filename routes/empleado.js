@@ -21,7 +21,7 @@ empleado.post("/", async(req, res, next)=>{
 
     if(first_name && last_name && phone_number && email && address){
         let query = "INSERT INTO employees (first_name, last_name, phone_number, email, address)";
-        query += ` VALUES('${first_name}', ${last_name}, ${phone_number}, ${email}, ${address})`;
+        query += ` VALUES('${first_name}', '${last_name}', '${phone_number}', '${email}', '${address}')`;
 
         const rows = await db.query(query);
 

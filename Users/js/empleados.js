@@ -28,7 +28,7 @@ function loadEmpleado() {
 }
 
 function displayEmpleados(empleado) {
-  var table = document.querySelector(".tDatos");
+  var table = document.querySelector("tbody");
   for (var i = 0; i < empleado.length; i++) {
     table.innerHTML += 
     `<tr>
@@ -39,8 +39,21 @@ function displayEmpleados(empleado) {
         <td>${empleado[i].address}</td>
         <td class = "tdAccion">
           <button class="btn btn-primary"><i class="fa fa-pencil"></i></button>
-          <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+          <button class="btn btn-danger" onClick="deleteEmpleado(${empleado[i].employee_id})"><i class="fa fa-trash"></i></button>
         </td>
     </tr>`;
   }
+}
+
+function deleteEmpleado(id) {
+  axios
+    .delete(url + "/empleado/" + id, headers)
+    .then(function (res) {
+      console.log(res);
+      alert("Empleado eliminado");
+      window.location.href = "empleados.html";
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
 }

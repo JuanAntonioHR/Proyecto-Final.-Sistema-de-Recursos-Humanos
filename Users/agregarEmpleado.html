@@ -5,37 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Empleado</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Crear Empleado</h1>
-        <form id="crearEmpleadoForm">
+        <div id="crearEmpleadoForm">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
             </div>
             <div class="form-group">
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
+                <input type="text" class="form-control" id="apellido" name="apellido" required>
             </div>
             <div class="form-group">
                 <label for="telefono">Número de Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="direccion">Dirección:</label>
-                <input type="text" id="direccion" name="direccion" required>
+                <input type="text" class="form-control" id="direccion" name="direccion" required>
             </div>
             <div class="form-group">
-                <input type="submit" value="Crear Empleado">
+                <button type="submit" class="btn btn-primary">Crear Empleado</button>
             </div>
-        </form>
+        </div>
+        <a href="empleados.html" class="btn btn-secondary">Volver</a>
     </div>
 
     <script src="./js/crearEmpleado.js"></script>
 </body>
 </html>
+
