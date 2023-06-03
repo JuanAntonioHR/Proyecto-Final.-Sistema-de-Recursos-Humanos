@@ -38,7 +38,7 @@ function displayEmpleados(empleado) {
         <td>${empleado[i].email}</td>
         <td>${empleado[i].address}</td>
         <td class = "tdAccion">
-          <button class="btn btn-primary"><i class="fa fa-pencil"></i></button>
+          <button class="btn btn-primary fa fa-pencil" onClick="editarEmpleado(${empleado[i].employee_id})"></button>
           <button class="btn btn-danger" onClick="deleteEmpleado(${empleado[i].employee_id})"><i class="fa fa-trash"></i></button>
         </td>
     </tr>`;
@@ -56,4 +56,8 @@ function deleteEmpleado(id) {
     .catch(function (err) {
       console.log(err);
     });
+}
+
+function editarEmpleado(id) {
+  window.location.href = `editarEmpleado.html?id=${id}`;
 }
